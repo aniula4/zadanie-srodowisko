@@ -14,7 +14,13 @@ class PasiastyKwadrat(Kwadrat): # dziedziczymy po klasie Kwadrat aby móć skorz
         for pasek in range(0, paski): # dorysowujemy paski
             line(x+_xLinii_, y, x+_xLinii_, y+self.bok)
             _xLinii_ +=space
-            
+
+class KolorowyKwadrat(Kwadrat):
+    def sketchKolorowy(self, x, y, colorR, colorG, colorB):
+        fill(colorR, colorG, colorB) 
+        Kwadrat.sketch(self, x, y)
+        
+                            
 def setup():
     size(500, 500)
     malyKwadrat = Kwadrat(50.0) # obiekt typu kwardrat o wielkości 50
@@ -28,3 +34,11 @@ def setup():
     duzyPasiastyKwadrat  = PasiastyKwadrat(120.0)
     duzyPasiastyKwadrat.sketchPasiasty(300, 50, 12)
     duzyPasiastyKwadrat.sketch(350, 300) # na obiekcie typu klasy pochodnej można wywołać metodę klasy bazowej ( rysujemy kwadrat bez pasków )
+    
+    rozowyKwadrat = KolorowyKwadrat(100.0)
+    rozowyKwadrat.sketchKolorowy(10, 370, 255, 204, 204)
+    niebieskiKwadrat = KolorowyKwadrat(70.0)
+    niebieskiKwadrat.sketchKolorowy(120, 370, 0, 0, 255)
+    zielonyKwadrat = KolorowyKwadrat(50.0)
+    zielonyKwadrat.sketchKolorowy(200, 370, 0, 255, 0)
+    
