@@ -42,3 +42,5 @@ def setup():
     zielonyKwadrat = KolorowyKwadrat(50.0)
     zielonyKwadrat.sketchKolorowy(200, 370, 0, 255, 0)
     
+    # 2pkt, jest ok
+    
